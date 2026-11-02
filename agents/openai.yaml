@@ -1,0 +1,4 @@
+interface:
+  display_name: "画后 · Afterframe"
+  short_description: "结合图片、创作目标与参考画法，诊断视觉问题并辅助局部修复或观感调整"
+  default_prompt: "使用 $afterframe（画后）观察这张图，结合我的目标说明最值得调整的内容、收益与代价；先给建议，保留我明确指定的内容。"

@@ -1,0 +1,11 @@
+{
+  "directory": "/var/folders/7s/mxry1wl974x6z7s_v8txf7xc0000gn/T/afterframe-loop-blind-e7bltzil",
+  "mapping": {
+    "illustration-A": "with",
+    "illustration-B": "without",
+    "pixel-A": "without",
+    "pixel-B": "with",
+    "poster-A": "with",
+    "poster-B": "without"
+  }
+}

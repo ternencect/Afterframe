@@ -1,0 +1,135 @@
+{
+  "group": "with",
+  "skill_snapshot": "examples/closed-loop/skill-snapshot.md",
+  "cases_source": "examples/closed-loop/with/cases.json",
+  "tool": "built-in image_gen.imagegen",
+  "capabilities": "Generative-only editing; no text layers, masks, pixel locks or deterministic image edits.",
+  "calls_used": 3,
+  "max_calls": 6,
+  "originals_preserved": true,
+  "other_groups_read": false,
+  "runs": [
+    {
+      "case": "illustration",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: precise-object-edit. Input image 1 is the edit target: a children's-book paper-collage illustration. Make one restrained local adjustment only: on the girl's sleeve at viewer-right, between the wrist cuff and lower-right elbow, reduce the exceptionally dense dark crosshatching in the middle of that sleeve so the orange-red paper base is more visible. Keep some dark pencil hatching at folds and shaded edges; preserve the cuff, sleeve outline, elbow and long arm proportions. Do not remove the paper grain or flatten the material. Preserve the girl's oversized eyes, exact character features and expression, hair and bow, thin arms, hands, paper boat, all intentional hard cut-paper edges, palette, surrounding trees/leaves/sun, and entire composition. Do not clean up, smooth, recolor or redraw other areas. Retain the existing handmade paper and pencil style throughout.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/illustration.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0 as /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-f726a8fa-06d1-426f-bb59-9ee3d24d42f0.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generated_source_path": "/Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-f726a8fa-06d1-426f-bb59-9ee3d24d42f0.png",
+      "saved_output_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/with/illustration-v1.png",
+      "actual_input_role": "Original edit target, not earlier generated result",
+      "visual_review": "Original and saved v1 inspected via view_image, final saved review used detail original.",
+      "assessment": {
+        "selected_version": "original",
+        "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/illustration.png",
+        "suggestions": [
+          {
+            "id": "1",
+            "decision": "execute",
+            "suitability": "Reasonable optional coordination change; concentrated right sleeve hatching is visible, but not an objective drawing error.",
+            "expected": "Less middle-sleeve crosshatching, orange base exposed; grain, contour, cuff and character preserved.",
+            "observed": "Partial improvement: middle sleeve has more orange between lines; dense cuff/edge shading remains. Across face, sweater, sun and background the fine paper grain became larger swirled/embossed-looking marks. Composition, oversized eyes, long arms and boat remain recognizable.",
+            "status": "部分改善"
+          }
+        ],
+        "retry": false,
+        "retry_reason": "Global texture drift cannot plausibly be repaired precisely with the same generative-only control. Do not risk a second redraw.",
+        "selection_reason": "Original retains the intended fine paper texture; optional sleeve improvement does not justify global material drift."
+      }
+    },
+    {
+      "case": "pixel",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: precise-object-edit. Input image 1 is the edit target: a retro-game robot visual concept. Edit only the blurry boot at viewer-right. Reconstruct its outer contour, cuff, sole and pale horizontal stripe as clear hard stair-step pixel edges, using the existing navy, turquoise and cream colors. Remove the turquoise blur halo outside this boot. Use the left boot and platform as references for edge rhythm, while retaining the right boot's own location, size, shape and outward-facing pose; do not make the boots symmetric. The exact pre-blur contour is unavailable, so make a conservative interpretation within its visible footprint. Preserve the large head, asymmetrical antennae, face, limbs, letter/envelope, bag, platform, background and current palette and internal subtle texture. Do not flatten or restyle the whole image; no added colors or details.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/pixel.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0 as /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-9701bd63-ba70-4467-a092-0d9137e0a842.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generated_source_path": "/Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-9701bd63-ba70-4467-a092-0d9137e0a842.png",
+      "saved_output_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/with/pixel-v1.png",
+      "actual_input_role": "Original edit target, not earlier generated result",
+      "visual_review": "Original and saved v1 inspected via view_image, final saved review used detail original.",
+      "assessment": {
+        "selected_version": "v1",
+        "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/with/pixel-v1.png",
+        "suggestions": [
+          {
+            "id": "1",
+            "decision": "execute",
+            "suitability": "Visible unilateral boot blur conflicts with otherwise hard stepped edges; no glow intent stated.",
+            "expected": "Hard boot/cuff/sole/stripe edges and removal of halo; retain own boot shape and pose, palette and character.",
+            "observed": "Hard stepped right boot contour, rectangular cream stripe and navy sole are visible; turquoise halo removed. Right-facing boot and location retained, though reconstructed cuff is a more explicit cream horizontal band and toe stair steps are interpretive.",
+            "status": "已改善"
+          },
+          {
+            "id": "internal_texture",
+            "decision": "skip",
+            "reason": "Prior diagnosis explicitly advises retaining broadly distributed tonal texture; original visual inspection supports that."
+          },
+          {
+            "id": "future_grid_check",
+            "decision": "skip",
+            "reason": "Conditional on actual game-sprite production and target resolution; task remains a visual concept, no target grid supplied."
+          }
+        ],
+        "retry": false,
+        "retry_reason": "Target defect resolved; cuff interpretation is within uncertainty of blurred original, no concrete correction justified.",
+        "selection_reason": "Clear improvement to local edge consistency, with head, asymmetric antennae, envelope, platform, pose and visual palette retained; not certified as production-grid sprite."
+      }
+    },
+    {
+      "case": "poster",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: text-localization. Input image 1 is the edit target: an exhibition poster for a mobile feed. Correct the large black top headline to exactly 'AFTERFRAME', letter sequence A F T E R F R A M E. Retain its heavy condensed black type, top position and visual weight, fitting within the existing margins. Keep the subtitle exactly 'VISUAL NOTES' in the same two-line left placement. Darken only the bottom date '2026.11.08' and bottom-right venue 'NORTH HALL' from pale gray to dark charcoal for mobile readability, preserving their existing size, spacing and left/right layout. Preserve the off-white background, large orange circle, blue rectangle and their deliberate colored overlap, shapes, sizes, positions, composition and subtle existing surface character. No other aesthetic changes. This is a conservative generative edit; prioritize fidelity to the supplied layout.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/poster.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0 as /Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-e3c009f0-aed4-472f-93de-33421921cc4c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generated_source_path": "/Users/ternence/.codex/generated_images/01a19d54-cb28-7fb2-851f-e1ed55eb45b0/exec-e3c009f0-aed4-472f-93de-33421921cc4c.png",
+      "saved_output_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/with/poster-v1.png",
+      "actual_input_role": "Original edit target, not earlier generated result",
+      "visual_review": "Original and saved v1 inspected via view_image, final saved review used detail original.",
+      "assessment": {
+        "selected_version": "v1",
+        "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/with/poster-v1.png",
+        "suggestions": [
+          {
+            "id": "1",
+            "decision": "execute_goal_with_method_substitution",
+            "suitability": "Verifiable typo; exact editable-type method unavailable.",
+            "expected": "AFTERFRAME exact headline, matching weight and placement, no overflow.",
+            "observed": "Headline reads AFTERFRAME, fits margins and maintains heavy black top hierarchy. Letter widths/spacing around corrected sequence change.",
+            "status": "已改善"
+          },
+          {
+            "id": "2_darkening",
+            "decision": "execute",
+            "suitability": "Pale original footer clearly low contrast; key event information benefits from darkening.",
+            "expected": "Date and venue dark charcoal, same content and left/right positions.",
+            "observed": "2026.11.08 and NORTH HALL are dark and legible; wording and left/right placement preserved.",
+            "status": "已改善"
+          },
+          {
+            "id": "2_conditional_resize",
+            "decision": "skip",
+            "reason": "No target phone viewport supplied; darkening already resolves the demonstrated contrast issue. No evidence requiring extra font-size/spacing changes."
+          }
+        ],
+        "retry": false,
+        "retry_reason": "Exact text verified visually and core shapes retained; no concrete remaining correction.",
+        "selection_reason": "Correct spelling and legible footer achieved while circle, rectangle and deliberate overlap remain visually stable; no pixel-identity claim."
+      }
+    }
+  ]
+}

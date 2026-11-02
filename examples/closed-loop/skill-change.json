@@ -1,0 +1,12 @@
+{
+  "previous_evaluation_skill_sha256": "7d517f368ea69ae92afc6975b99e397a407fd5ca5e3bc05b1d5da4bfa1ec6d51",
+  "closed_loop_skill_sha256": "8b385002a6e2f8632b342b6b7350bdb144e9ac47591c12d4ee47e0959201d517",
+  "changes": [
+    "Map accepted suggestions to expected observable changes before editing",
+    "Verify each executed suggestion against original and actual result",
+    "Separate advice suitability from tool execution failure",
+    "Targeted correction or rollback with stopping conditions",
+    "Deliver visible before/after comparison with per-suggestion outcomes"
+  ],
+  "scope": "New workflow revision; prior test results belong to their older snapshot, not this revision"
+}

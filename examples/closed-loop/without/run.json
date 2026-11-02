@@ -1,0 +1,78 @@
+{
+  "group": "without",
+  "date": "2026-11-03",
+  "mode": "built-in imagegen only",
+  "read_scope": [
+    "examples/closed-loop/without/cases.json",
+    "three listed original images",
+    "shared imagegen SKILL.md"
+  ],
+  "limitations": "No masks, pixel locks, editable text layers or deterministic grid edit. Generation is best-effort and may alter protected content. No prior or other-group results read.",
+  "calls": 3,
+  "originals_preserved": true,
+  "runs": [
+    {
+      "case": "illustration",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: precise-object-edit. Edit target: the attached square picture-book collage illustration. Make only two small local refinements: on the sleeve at image RIGHT, reduce the dense black crosshatching substantially, leaving a few fine dark lines for volume over the same rust-orange paper grain, to harmonize with the other sleeve and torso. At both fingertips where they meet the paper boat, very slightly clarify the existing contour separation so the gentle holding action is readable; do not change hand positions or boat shape. Preserve the distinctive huge eyes, face, fine long arms, hair strands, paper boat folds and silhouette, hard cut-paper collage edges, original framing/composition, all foliage, yellow sun, palette and rich tactile paper grain. Do not smooth or repaint the rest of the illustration. Preserve square dimensions. No added objects or text.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/illustration.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b as /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-00cb6191-59a6-4963-971e-dd0db97d8f1e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source_path": "/Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-00cb6191-59a6-4963-971e-dd0db97d8f1e.png",
+      "saved_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/without/illustration-v1.png",
+      "inspection": "Viewed actual saved PNG using view_image detail original; 1254x1254 verified with sips",
+      "selected_version": "original",
+      "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/illustration.png",
+      "reason": "V1 fixes heavy right-sleeve hatching but regenerates granular paper into conspicuous swirled/embossed texture across face, sun, background and clothes. Original selected to preserve illustration material; the original sleeve issue remains unresolved.",
+      "retry": false,
+      "retry_reason": "A further whole-image generative pass cannot plausibly restore original texture precisely; no retry forced.",
+      "observed": "Right sleeve hatching removed almost entirely and replaced with sparse seam/volume lines. Hand/boat contacts remain readable but no clear additional improvement. Big eyes, long arms, boat silhouette and composition visually retained. Texture changes globally."
+    },
+    {
+      "case": "pixel",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: precise-object-edit. Edit target: the attached square retro-game robot visual concept. Repair the blurred shoe and ankle on the image RIGHT only. Reconstruct its current pose, size and silhouette with crisp square pixel steps, using existing teal, dark navy, and pale yellow. Make the pale yellow horizontal shoe stripe a clean hard-edged rectangle, a clear dark navy sole, and a clean square ankle connection. Remove the diffuse halo bleeding into the navy background and ground immediately surrounding this shoe. Keep the right shoe facing its existing direction, do not mirror or copy the left shoe. Match the neighboring robot's established step sizes as closely as possible. Preserve everything elsewhere: huge head, asymmetric antennae and their exact heights, face, body, hands, diagonal bag strap, envelope, platform, composition and existing palette and subtle material color variation. Do not globally flatten gradients or redraw the robot. Square canvas, no added text or objects.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/pixel.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b as /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-8706777d-d5d8-4e84-8631-931c4f08b928.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source_path": "/Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-8706777d-d5d8-4e84-8631-931c4f08b928.png",
+      "saved_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/without/pixel-v1.png",
+      "inspection": "Viewed actual saved PNG using view_image detail original; 1254x1254 verified with sips",
+      "selected_version": "v1",
+      "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/without/pixel-v1.png",
+      "reason": "Clear right shoe/ankle repair with preserved recognizable silhouette, big head, asymmetric antennae and palette.",
+      "retry": false,
+      "retry_reason": "No concrete remaining defect warranting another generative pass for the visual-concept use.",
+      "observed": "Halo removed, yellow stripe rectangular, navy sole clear, crisp ankle. Shoe contour reconstructed and slightly regularized. Existing fine tonal variation remains. Exact uniform grid or pixel identity not guaranteed."
+    },
+    {
+      "case": "poster",
+      "version": 1,
+      "args": {
+        "prompt": "Use case: text-localization. Edit target: the attached square exhibition poster for a mobile feed. Correct the large black condensed heading from AFTERFARME to exactly AFTERFRAME (A F T E R F R A M E). Retain its bold condensed typographic character and single-line layout, slightly reduce/reposition it to give visibly more top and side breathing room (about 4 percent canvas margin). Keep the two-line VISUAL NOTES label unchanged. At bottom retain exact text 2026.11.08 at left and NORTH HALL at right, but make both dark charcoal with noticeably improved contrast, modestly larger letters and slightly tighter letter spacing; raise them slightly to leave about 4 percent bottom margin, keep left/right alignment and avoid colliding with artwork. Preserve the existing orange circle, saturated blue rectangle, their relative placement, scale, intentional translucent color overlap, warm off-white background and overall square graphic composition. Do not change shapes, add text, new graphic elements or decoration. Exact four text contents only: AFTERFRAME / VISUAL NOTES / 2026.11.08 / NORTH HALL.",
+        "referenced_image_paths": [
+          "/Users/ternence/Repositories/ternence/Afterframe/examples/evaluation/inputs/poster.png"
+        ],
+        "transparent_background": false
+      },
+      "output_hint": "Generated images are saved to /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b as /Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-c865e635-1418-4bae-847f-c35648a1b6d5.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source_path": "/Users/ternence/.codex/generated_images/01a19d54-aed4-7362-8109-73633259536b/exec-c865e635-1418-4bae-847f-c35648a1b6d5.png",
+      "saved_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/without/poster-v1.png",
+      "inspection": "Viewed actual saved PNG using view_image detail original; 1254x1254 verified with sips",
+      "selected_version": "v1",
+      "selected_path": "/Users/ternence/Repositories/ternence/Afterframe/examples/closed-loop/without/poster-v1.png",
+      "reason": "Correct exact copy and substantially improved footer readability while retaining orange circle, blue rectangle and overlap.",
+      "retry": false,
+      "retry_reason": "Top/side title margins improved; footer upward movement modest, actual platform crop unspecified. No justified additional pass merely to force arbitrary margin.",
+      "observed": "AFTERFRAME / VISUAL NOTES / 2026.11.08 / NORTH HALL all visually correct. Footer dark, larger/bolder, tighter tracking. Title shorter vertically with more breathing room. Footer remains close to side edges; approximately 4 percent prompt was not fully realized."
+    }
+  ]
+}
